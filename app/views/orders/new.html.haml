@@ -1,17 +1,22 @@
 #orders-new
-  %h2 注文フォーム
-  = simple_form_for @order do |f| 
-    = f.error_notification
-    .form-inputs
-      = f.input :customer_name
-    %table.table
-      - Menu.all.each do |menu|
-        %tr
-          %td= menu.bread.name
-          %td= menu.quantity
-          %td= text_field_tag "bread[#{menu.bread.id}]", 0, class: 'quantity'
-          %td= link_to '+ 1', '#', class: 'btn'
-          %td= link_to '+ 0.5', '#', class: 'btn'
-          %td= link_to 'Reset', '#', class: 'btn btn-danger'
-    .form-actions
-      = f.submit class: 'btn btn-primary'
+  .row-fluid
+    .span6
+      %h2 注文フォーム
+      = simple_form_for @order do |f| 
+        = f.error_notification
+        .form-inputs
+          = f.input :customer_name
+        %table.table
+          - Menu.all.each do |menu|
+            %tr.name-row
+              %td{colspan: 5}= menu.bread.name
+            %tr.quantity-row
+              %td
+                残
+                = menu.quantity
+              %td= text_field_tag "bread[#{menu.bread.id}]", 0, class: 'quantity'
+              %td= link_to '1.0', '#', class: 'btn'
+              %td= link_to '0.5', '#', class: 'btn'
+              %td= link_to '0', '#', class: 'btn btn-danger'
+        .form-actions
+          = f.submit class: 'btn btn-primary'
