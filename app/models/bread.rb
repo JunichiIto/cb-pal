@@ -1,3 +1,4 @@
 class Bread < ActiveRecord::Base
-  attr_accessible :name
+  has_one :menu
+  validates_presence_of :name
 end

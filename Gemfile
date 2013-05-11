@@ -21,16 +21,23 @@ group :development, :test do
   gem "capybara"
   gem 'debugger'
   gem 'factory_girl_rails'
-end
 
-group :development do
-  gem "better_errors"
-  gem 'binding_of_caller'
+  gem 'spork'
+  gem 'rb-fsevent'
+  gem 'terminal-notifier-guard'
+  gem 'guard-rspec'
+  gem 'guard-spork'
   gem 'pry'
-  gem 'pry-doc'
   gem 'pry-rails'
+  gem 'pry-coolline'
   gem 'pry-remote'
+  gem "pry-debugger"
+  gem "pry-doc"
   gem 'pry-stack_explorer'
-  gem 'pry-debugger'
-  gem 'awesome_print', require: 'awesome_print'
+  gem 'hirb'
+  gem 'hirb-unicode'
+  gem 'awesome_print'
+  gem 'pry-doc'
+  gem 'awesome_print'
+  gem 'database_cleaner'
 end

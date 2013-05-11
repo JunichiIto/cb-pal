@@ -34,4 +34,6 @@ CbPal::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+
+  config.cache_classes = !(defined?(Spork) && Spork.using_spork?)
 end
