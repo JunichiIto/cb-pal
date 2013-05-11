@@ -1,7 +1,7 @@
 # coding: utf-8
 class MenusController < ApplicationController
   def index
-    @menu = Menu.all
+    @menus = Menu.all
   end
 
   def new_bulk_create
