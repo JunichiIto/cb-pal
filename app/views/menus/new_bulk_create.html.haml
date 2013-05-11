@@ -1,0 +1,8 @@
+#new-bulk-create
+  %h2 メニューの作成
+  = form_tag bulk_create_menus_path do |f|
+    .form_inputs
+      = text_area_tag 'bulk_menu_text', @bulk_menu_text, class: "span12"
+
+    .form-actions
+      = submit_tag '作成', class: "btn btn-primary"

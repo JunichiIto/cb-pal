@@ -5,6 +5,12 @@ describe Menu do
   describe "::bulk_create" do
     let(:text) { "あんぱん 10\nバゲット 5" }
     before do
+      menu = Menu.new
+      menu.quantity = 1
+      bread = menu.build_bread
+      bread.name = "クリームぱん"
+      menu.save!
+
       Menu.bulk_create(text)
     end
     it 'creates breads' do
@@ -26,6 +32,9 @@ describe Menu do
     specify "バゲットは5こ" do
       bread = Bread.where(name: "バゲット").first
       expect(bread.menu.quantity).to eq 5
+    end
+    it 'deletes old bread' do
+      expect(Bread.where(name: "クリームぱん")).to be_blank
     end
   end
 end
