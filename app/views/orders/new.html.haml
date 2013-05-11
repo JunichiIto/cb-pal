@@ -1,0 +1,6 @@
+= simple_form_for @order do |f| 
+  = f.error_notification
+  .form-inputs
+    = f.input :customer_name
+  .form-actions
+    = f.submit class: 'btn btn-primary'
