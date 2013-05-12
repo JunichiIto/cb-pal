@@ -1,4 +1,4 @@
-#orders-new
+#order-form
   .row-fluid
     .span6
       %h2 注文フォーム
@@ -13,10 +13,10 @@
             %tr.quantity-row
               %td
                 残
-                = menu.quantity
-              %td= text_field_tag "order[bread_quantities][#{menu.bread.id}]", 0, class: 'quantity'
-              %td= link_to '1.0', '#', class: 'btn'
-              %td= link_to '0.5', '#', class: 'btn'
-              %td= link_to '0', '#', class: 'btn btn-danger'
+                %span.remaining= menu.quantity
+              %td= text_field_tag "order[bread_quantities][#{menu.bread.id}]", 0, class: 'order-quantity'
+              %td= link_to '1.0', '#', class: 'btn inc-by-1'
+              %td= link_to '0.5', '#', class: 'btn inc-by-0-5'
+              %td= link_to '0', '#', class: 'btn btn-danger set-zero'
         .form-actions
           = f.submit class: 'btn btn-primary'
