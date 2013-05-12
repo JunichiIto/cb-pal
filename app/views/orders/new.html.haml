@@ -13,7 +13,7 @@
             %tr.quantity-row
               %td
                 残
-                %span.remaining= menu.quantity
+                %span.remaining= menu.remaining_bread_count
               %td= text_field_tag "order[bread_quantities][#{menu.bread.id}]", 0, class: 'order-quantity'
               %td= link_to '1.0', '#', class: 'btn inc-by-1'
               %td= link_to '0.5', '#', class: 'btn inc-by-0-5'

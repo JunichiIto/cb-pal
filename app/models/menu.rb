@@ -17,4 +17,8 @@ class Menu < ActiveRecord::Base
       end
     end
   end
+
+  def remaining_bread_count
+    self.quantity - self.bread.order_details.sum(:quantity)
+  end
 end

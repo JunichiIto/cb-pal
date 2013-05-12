@@ -37,4 +37,35 @@ describe Menu do
       expect(Bread.where(name: "クリームぱん")).to be_blank
     end
   end
+
+  describe "remaining_bread_count" do
+    before do
+      @menu1 = Menu.new
+      @menu1.quantity = 10
+      bread1 = @menu1.build_bread
+      bread1.name = "クリームぱん"
+      @menu1.save!
+
+      @menu2 = Menu.new
+      @menu2.quantity = 5
+      bread2 = @menu2.build_bread
+      bread2.name = "バゲット"
+      @menu2.save!
+
+      Order.create "customer_name" => "たなか", "bread_quantities" => {bread1.id.to_s => "1"}
+      Order.create "customer_name" => "さとう", "bread_quantities" => {bread1.id.to_s => "2"}
+      Order.create "customer_name" => "にしわき", "bread_quantities" => {bread2.id.to_s => "0.5"}
+
+      @menu1.reload
+      @menu2.reload
+    end
+
+    it "returns valid remaining bread count for クリームぱん" do
+      expect(@menu1.remaining_bread_count).to eq 7.0
+    end
+
+    it "returns valid remaining bread count for バゲット" do
+      expect(@menu2.remaining_bread_count).to eq 4.5
+    end
+  end
 end
