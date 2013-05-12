@@ -4,5 +4,5 @@ CbPal::Application.routes.draw do
     post :bulk_create, on: :collection
   end
   resources :orders
-  root :to => 'menus#new_bulk_create'
+  root :to => 'orders#new'
 end

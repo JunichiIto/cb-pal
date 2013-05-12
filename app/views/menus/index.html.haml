@@ -1,13 +1,21 @@
-%h2 メニュー一覧
-%table.table.table-bordered
-  %thead
-    %tr
-      %th
-        Name
-      %th
-        数量
-  %tbody
-    - @menus.each do |menu|
-      %tr
-        %td= menu.bread.name
-        %td= menu.quantity
+.row-fluid
+  .span6
+    %h2 メニュー一覧
+    %table.table.table-bordered
+      %thead
+        %tr
+          %th
+            パン
+          %th
+            製造数
+          %th
+            オーダー数
+          %th
+            残
+      %tbody
+        - @menus.each do |menu|
+          %tr
+            %td= menu.bread.name
+            %td= menu.quantity
+            %td= menu.ordered_bread_quantity
+            %td= menu.remaining_bread_quantity

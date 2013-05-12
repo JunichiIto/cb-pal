@@ -60,12 +60,12 @@ describe Menu do
       @menu2.reload
     end
 
-    it "returns valid remaining bread count for クリームぱん" do
-      expect(@menu1.remaining_bread_count).to eq 7.0
+    it "returns valid remaining bread quantity for クリームぱん" do
+      expect(@menu1.remaining_bread_quantity).to eq 7.0
     end
 
-    it "returns valid remaining bread count for バゲット" do
-      expect(@menu2.remaining_bread_count).to eq 4.5
+    it "returns valid remaining bread quantity for バゲット" do
+      expect(@menu2.remaining_bread_quantity).to eq 4.5
     end
   end
 end
