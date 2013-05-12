@@ -14,8 +14,15 @@
     .navbar.navbar-fluid
       .navbar-inner
         .container
-          %a.brand(href="/") CB Pal
-          .container.nav-collapse
+          %button.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse", :type => "button"}
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          = link_to 'CB Pal', new_order_path, class: 'brand'
+          .nav-collapse.collapse
+            %ul.nav
+              %li= link_to 'メニュー一覧', menus_path
+              %li= link_to 'オーダー一覧', orders_path
 
     .container-fluid
       .row-fluid

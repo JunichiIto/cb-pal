@@ -1,4 +1,7 @@
 $ ->
+  $(document).on "touchstart.dropdown.data-api", ".dropdown-menu", (event) ->
+    event.stopPropagation()
+  
   # TODO need refactoring
   $(document).on("click", "#order-form a.inc-by-1", ->
     $this = $(this)
