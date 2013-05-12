@@ -1,0 +1,26 @@
+ja:
+  activerecord:
+    models:
+      bread: bread  #g
+      menu: menu  #g
+      order: order  #g
+      order_detail: order_detail  #g
+
+    attributes:
+      bread:
+        menu: :activerecord.models.menu  #g
+        name: name  #g
+        order_details: order_details  #g
+
+      menu:
+        bread: :activerecord.models.bread  #g
+        quantity: quantity  #g
+
+      order:
+        customer_name: 名前  #g
+        order_details: order_details  #g
+
+      order_detail:
+        bread: :activerecord.models.bread  #g
+        order: :activerecord.models.order  #g
+        quantity: quantity  #g

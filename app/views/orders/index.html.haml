@@ -1,0 +1,13 @@
+#order-list
+  .row-fluid
+    .span6
+      %h2 オーダー一覧
+      - @orders.each do |order|
+        %table.table.table-bordered
+          %tr
+            %td= order.customer_name.blank? ? "(No name)" : order.customer_name
+            %td= l order.created_at, format: :short
+          - order.order_details.each do |detail|
+            %tr
+              %td= detail.bread.name
+              %td= detail.quantity

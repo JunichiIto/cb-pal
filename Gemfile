@@ -15,6 +15,7 @@ gem "haml", ">= 3.0.0"
 gem "haml-rails"
 gem "jquery-rails"
 gem 'simple_form'
+gem 'i18n_generators'
 
 group :development, :test do
   gem "rspec-rails", ">= 2.0.1"

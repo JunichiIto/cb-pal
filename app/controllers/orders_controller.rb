@@ -15,4 +15,8 @@ class OrdersController < ApplicationController
       end
     end
   end
+
+  def index
+    @orders = Order.order("created_at DESC")
+  end
 end
