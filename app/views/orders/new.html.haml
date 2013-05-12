@@ -14,7 +14,7 @@
               %td
                 残
                 = menu.quantity
-              %td= text_field_tag "bread[#{menu.bread.id}]", 0, class: 'quantity'
+              %td= text_field_tag "order[bread_quantities][#{menu.bread.id}]", 0, class: 'quantity'
               %td= link_to '1.0', '#', class: 'btn'
               %td= link_to '0.5', '#', class: 'btn'
               %td= link_to '0', '#', class: 'btn btn-danger'
