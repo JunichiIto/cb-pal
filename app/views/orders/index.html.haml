@@ -5,7 +5,9 @@
       - @orders.each do |order|
         %table.table.table-bordered
           %tr
-            %td= order.customer_name.blank? ? "(No name)" : order.customer_name
+            %td
+              = link_to edit_order_path(order) do
+                = order.customer_name.blank? ? "(No name)" : order.customer_name
             %td= l order.created_at, format: :short
           - order.order_details.each do |detail|
             %tr

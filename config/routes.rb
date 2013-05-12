@@ -3,6 +3,6 @@ CbPal::Application.routes.draw do
     get :new_bulk_create, on: :collection
     post :bulk_create, on: :collection
   end
-  resources :orders, only: %w(new create index)
+  resources :orders, only: %w(new create index edit update)
   root :to => 'menus#new_bulk_create'
 end

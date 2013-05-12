@@ -1,5 +1,7 @@
 # coding: utf-8
 class OrdersController < ApplicationController
+  before_filter :load_order, only: %w(edit update)
+
   def new
     @order = Order.new
   end
@@ -9,7 +11,7 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
-        format.html { redirect_to new_order_path, notice: "作成しました" }
+        format.html { redirect_to orders_path, notice: "作成しました" }
       else
         format.html { render action: "new" }
       end
@@ -18,5 +20,24 @@ class OrdersController < ApplicationController
 
   def index
     @orders = Order.order("created_at DESC")
+  end
+
+  def edit
+  end
+
+  def update
+    respond_to do |format|
+      if @order.update_attributes params[:order]
+        format.html { redirect_to orders_path, notice: "更新しました" }
+      else
+        format.html { render action: "update" }
+      end
+    end
+  end
+
+  private
+
+  def load_order
+    @order = Order.find(params[:id])
   end
 end
