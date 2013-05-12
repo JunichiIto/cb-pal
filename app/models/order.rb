@@ -1,5 +1,5 @@
 class Order < ActiveRecord::Base
-  has_many :order_details
+  has_many :order_details, dependent: :destroy
   attr_accessor :bread_quantities
   attr_accessible :customer_name, :bread_quantities
 

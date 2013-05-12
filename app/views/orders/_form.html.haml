@@ -21,4 +21,7 @@
         .form-actions
           = f.submit class: 'btn btn-primary'
           = link_to 'キャンセル', orders_path, class: 'btn'
+        %p
+          - if order.persisted?
+            = link_to '削除する', order_path(order), :confirm => 'よろしいですか？', :method => :delete
 

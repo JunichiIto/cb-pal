@@ -1,6 +1,6 @@
 # coding: utf-8
 class OrdersController < ApplicationController
-  before_filter :load_order, only: %w(edit update)
+  before_filter :load_order, only: %w(edit update destroy)
 
   def new
     @order = Order.new
@@ -32,6 +32,13 @@ class OrdersController < ApplicationController
       else
         format.html { render action: "update" }
       end
+    end
+  end
+
+  def destroy
+    @order.destroy
+    respond_to do |format|
+      format.html { redirect_to orders_path, notice: "削除しました" }
     end
   end
 
