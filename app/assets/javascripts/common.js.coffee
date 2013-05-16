@@ -33,3 +33,14 @@ $ ->
     $tr.css("background-color", "white")
     $tr.prev().css("background-color", "white")
     false
+
+  $('#order-form tbody > tr.quantity-row').each ->
+    $tr = $(this)
+    $orderQuantity = $tr.find(".order-quantity")
+    $remaining = $tr.find(".remaining")
+    if parseFloat($orderQuantity.val()) > 0
+      $tr.css("background-color", "lemonchiffon")
+      $tr.prev().css("background-color", "lemonchiffon")
+    else if parseFloat($remaining.text()) <= 0
+      $tr.css("background-color", "gainsboro")
+      $tr.prev().css("background-color", "gainsboro")
