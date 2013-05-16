@@ -4,8 +4,6 @@
       %h2 注文フォーム
       = simple_form_for order do |f| 
         = f.error_notification
-        .form-inputs
-          = f.input :customer_name
         %table.table
           - Menu.all.each do |menu|
             %tr.name-row
@@ -18,6 +16,8 @@
               %td= link_to '1.0', '#', class: 'btn inc-by-1'
               %td= link_to '0.5', '#', class: 'btn inc-by-0-5'
               %td= link_to '0', '#', class: 'btn btn-danger set-zero'
+        .form-inputs
+          = f.input :customer_name
         .form-actions
           = f.submit class: 'btn btn-primary'
           = link_to 'キャンセル', orders_path, class: 'btn'
