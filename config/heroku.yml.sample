@@ -1,0 +1,14 @@
+production:
+  app: appname
+  stack: cedar
+  tag: production/*
+  config:
+
+staging:
+  stack: cedar
+  app: appname-staging
+  config: &default
+    BUNDLE_WITHOUT: "development:test"
+    TZ: "Asia/Tokyo"
+    RAILS_ENV: staging
+    RACK_ENV: staging
