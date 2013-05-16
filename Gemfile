@@ -2,7 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.12'
 
-gem 'sqlite3'
+gem 'pg'
+gem 'thin'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -15,9 +16,10 @@ gem "haml", ">= 3.0.0"
 gem "haml-rails"
 gem "jquery-rails"
 gem 'simple_form'
-gem 'i18n_generators'
+gem 'newrelic_rpm'
 
 group :development, :test do
+  gem 'sqlite3'
   gem "rspec-rails", ">= 2.0.1"
   gem "capybara"
   gem 'debugger'
@@ -38,10 +40,12 @@ group :development, :test do
   gem 'hirb'
   gem 'hirb-unicode'
   gem 'awesome_print'
-  gem 'pry-doc'
-  gem 'awesome_print'
   gem 'database_cleaner'
 
   gem "better_errors"
   gem "binding_of_caller"
+
+  gem 'i18n_generators'
+  gem 'heroku_san'
+  gem 'heroku'
 end
