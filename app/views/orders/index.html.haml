@@ -14,4 +14,9 @@
             %tr
               %td= detail.bread.name
               %td= detail.quantity
+          - if order.note.present?
+            %tr
+              %td{colspan: 2}
+                [メモ]
+                = order.note
       = link_to '新規オーダー', new_order_path, class: 'btn new-order-btn'
