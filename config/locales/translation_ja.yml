@@ -19,6 +19,7 @@ ja:
       order:
         customer_name: 名前  #g
         order_details: order_details  #g
+        note: メモ、電話番号etc
 
       order_detail:
         bread: :activerecord.models.bread  #g

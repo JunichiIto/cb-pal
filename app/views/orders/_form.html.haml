@@ -18,6 +18,8 @@
               %td= link_to '0', '#', class: 'btn btn-danger set-zero'
         .form-inputs
           = f.input :customer_name
+        .form-inputs
+          = f.input :note
         .form-actions
           = f.submit class: 'btn btn-primary'
           = link_to 'キャンセル', orders_path, class: 'btn'

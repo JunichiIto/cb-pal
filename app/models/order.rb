@@ -1,7 +1,7 @@
 class Order < ActiveRecord::Base
   has_many :order_details, dependent: :destroy
   attr_accessor :bread_quantities
-  attr_accessible :customer_name, :bread_quantities
+  attr_accessible :customer_name, :bread_quantities, :note
 
   before_save :create_details
   def create_details
