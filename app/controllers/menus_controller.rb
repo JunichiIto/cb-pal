@@ -16,4 +16,18 @@ class MenusController < ApplicationController
       format.html { redirect_to new_bulk_create_menus_path, notice: "作成しました" }
     end
   end
+
+  def new_reset_all
+  end
+
+  def reset_all
+    Menu.transaction do
+      Order.destroy_all
+      Bread.destroy_all
+    end
+    respond_to do |format|
+      format.html { redirect_to new_bulk_create_menus_path, notice: "リセットしました" }
+    end
+
+  end
 end

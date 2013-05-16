@@ -1,0 +1,7 @@
+%h3 データリセット
+%p
+  この操作を行なうと全データがリセットされます。
+%well
+  = form_tag reset_all_menus_path do |f|
+    .form-actions
+      = submit_tag 'リセット', class: "btn btn-danger", confirm: "よろしいですか？"

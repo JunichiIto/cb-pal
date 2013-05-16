@@ -2,7 +2,8 @@
   .row-fluid
     .span6
       %h2 オーダー一覧
-      = link_to '新規オーダー', new_order_path, class: 'btn new-order-btn'
+      %p
+        = link_to '新規オーダー', new_order_path, class: 'btn new-order-btn'
       - @orders.each do |order|
         %table.table.table-bordered
           %tr
@@ -19,4 +20,5 @@
               %td{colspan: 2}
                 [メモ]
                 = order.note
-      = link_to '新規オーダー', new_order_path, class: 'btn new-order-btn'
+      %p
+        = link_to '新規オーダー', new_order_path, class: 'btn new-order-btn'
